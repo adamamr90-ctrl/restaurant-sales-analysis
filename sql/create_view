@@ -1,0 +1,50 @@
+-- Create a new view called restaurant_analysis
+CREATE VIEW restaurant_analysis AS
+(
+SELECT 
+
+-- Order ID for each order
+Order_id AS order_id,
+
+-- Customer name
+Customer_Name AS customer_name,
+
+-- Food item ordered
+Food_Item AS food_item,
+
+-- Food category
+Category AS category,
+
+-- Number of items ordered
+Quantity AS quantity,
+
+-- Price rounded to 2 decimal places
+ROUND(Price, 2) AS price,
+
+-- Total revenue = quantity × price
+Quantity * ROUND(Price, 2) AS total_revenue,
+
+-- Payment method used by the customer
+Payment_Method AS payment_method,
+
+-- Full order date and time
+Order_Time AS order_time,
+
+-- Extract only the hour from order time
+DATEPART(HOUR, Order_Time) AS order_hour,
+
+-- Get the month name
+DATENAME(MONTH, Order_Time) AS month_name,
+
+-- Get the month number
+DATEPART(MONTH, Order_Time) AS month_number,
+
+-- Get the weekday name
+DATENAME(WEEKDAY, Order_Time) AS weekday_name,
+
+-- Format date as year-month
+FORMAT(Order_Time, 'yyyy-MM') AS year_month
+
+-- Source table
+FROM dbo.restaurant_orders
+)
