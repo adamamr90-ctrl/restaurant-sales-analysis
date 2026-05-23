@@ -30,4 +30,4 @@ to analyze 500 restaurant transactions across 9 menu items,
 
 ## Dashboard
 [View live dashboard](https://app.powerbi.com/groups/me/reports/2c949b8b-9c65-4a54-9b2c-e1f85130f514/0c619deef85a1f1342d1?experience=power-bi)
-
+![Dashboard Screenshot](dashboard/dashboard_screenshot.png)
